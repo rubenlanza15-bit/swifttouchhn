@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global resets */
+html {
+  scroll-behavior: smooth;
+}
+
+/* custom sans font family applied via Tailwind config or utility */
+
+body {
+  margin: 0;
+  /* fallback defined by Tailwind */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
