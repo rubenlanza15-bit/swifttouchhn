@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from '../assets/logo.png';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -10,6 +11,10 @@ const fadeUp = {
 export default function HeroSection() {
   return (
     <section className="relative pt-40 pb-32 lg:pt-56 lg:pb-48 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
+      {/* company logo - replace src/assets/logo.svg with your own image file (PNG, SVG, etc.)
+          you can also update the import at the top if you change the filename
+      */}
+      <img src={Logo} alt="SwiftTouch logo" className="h-16 mb-8" />
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
       
       <motion.h1 
