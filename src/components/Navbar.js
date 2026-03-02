@@ -30,8 +30,9 @@ export default function Navbar() {
 
   // Handle section links - if on /services, navigate to home with anchor
   const handleSectionLink = (href) => {
+    const target = `/${href}`; // produces '/#contacto' etc.
     if (location.pathname !== '/') {
-      window.location.href = href;
+      window.location.href = target;
     } else {
       const element = document.querySelector(href);
       if (element) {

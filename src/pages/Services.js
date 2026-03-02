@@ -141,18 +141,21 @@ export default function Services() {
       >
         <h2 className="text-2xl font-semibold text-center mb-4">Servicios Técnicos</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {technicalServices.map(({ title, description }, index) => (
-            <Link
-              key={title}
-              to={`/service/${index}`}
-              className="bg-[#0A111F] p-8 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-colors cursor-pointer transform hover:scale-105 duration-300"
-            >
-              <h3 className="text-lg font-medium mb-3 text-blue-400">{title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {description}
-              </p>
-            </Link>
-          ))}
+          {technicalServices.map(({ title, description }, index) => {
+            const href = index === 0 ? '/repair-computadoras' : `/service/${index}`;
+            return (
+              <Link
+                key={title}
+                to={href}
+                className="bg-[#0A111F] p-8 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-colors cursor-pointer transform hover:scale-105 duration-300"
+              >
+                <h3 className="text-lg font-medium mb-3 text-blue-400">{title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {description}
+                </p>
+              </Link>
+            );
+          })}
         </div>
       </motion.div>
 

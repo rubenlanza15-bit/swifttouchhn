@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 py-6 text-xs text-gray-500">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
           {/* Left side - Company info */}
           <div className="flex items-center gap-4">
             <div className="text-sm font-bold text-white tracking-tight">
@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
           
           {/* Right side - Copyright */}
-          <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} SwiftTouch. All rights reserved.</p>
+          <p className="text-gray-400 text-xs mt-2 sm:mt-0">&copy; {new Date().getFullYear()} SwiftTouch. All rights reserved.</p>
         </div>
       </div>
     </footer>
