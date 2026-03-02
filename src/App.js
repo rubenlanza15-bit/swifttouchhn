@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import IdentitySection from './components/IdentitySection';
@@ -17,6 +18,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-[#050B14] text-white font-sans selection:bg-blue-600 selection:text-white">
           <Navbar />
           <main>
