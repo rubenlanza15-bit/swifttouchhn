@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -10,7 +11,12 @@ const fadeUp = {
 
 export default function ComingSoonService() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-12 pt-32 pb-24">
+    <>
+      <Helmet>
+        <title>Próximamente – SwiftTouchHn</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-12 pt-32 pb-24">
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
 
       <motion.div
@@ -45,5 +51,6 @@ export default function ComingSoonService() {
         </div>
       </motion.div>
     </section>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { fadeUp } from '../utils/animations';
 
 // Header/cover image for the services section (add your file to src/assets)
@@ -53,8 +54,32 @@ export default function Services() {
     },
   ];
 
+  const homeServices = [
+    {
+      title: 'Instalación y configuración de wifi',
+      description: 'Conexión inalámbrica estable y segura en tu hogar.',
+    },
+    {
+      title: 'Instalación básica de cámaras de seguridad',
+      description: 'Protege tu hogar con vigilancia confiable.',
+    },
+    {
+      title: 'Configuración de almacenamiento profesional en la nube',
+      description: 'Respaldo y acceso a tus archivos desde cualquier lugar.',
+    },
+    {
+      title: 'Seguridad digital para familias',
+      description: 'Protege a tu familia con soluciones de ciberseguridad.',
+    },
+  ];
+
   return (
-    <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+    <>
+      <Helmet>
+        <title>Servicios – SwiftTouchHn</title>
+        <meta name="description" content="Descubre los servicios que ofrece SwiftTouchHn, desde desarrollo web hasta soporte técnico e infraestructura." />
+      </Helmet>
+      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
       {coverImg && (
         <motion.div
           initial="hidden"
@@ -130,6 +155,32 @@ export default function Services() {
           ))}
         </div>
       </motion.div>
+
+      {/* Home Services Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        className="mt-20"
+      >
+        <h2 className="text-2xl font-semibold text-center mb-4">SwiftTouch Hogar</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {homeServices.map(({ title, description }, idx) => (
+            <Link
+              key={title}
+              to={`/service/${technicalServices.length + idx}`}
+              className="bg-[#0A111F] p-8 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-colors cursor-pointer transform hover:scale-105 duration-300"
+            >
+              <h3 className="text-lg font-medium mb-3 text-blue-400">{title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </motion.div>
     </section>
+    </>
   );
 }

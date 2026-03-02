@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../assets/logo.png';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,6 +16,10 @@ export default function HeroSection() {
           you can also update the import at the top if you change the filename
       */}
       <img src={Logo} alt="SwiftTouchHn logo - soluciones digitales" className="h-16 mb-8" />
+      <Helmet>
+        <title>SwiftTouchHn - Soluciones digitales</title>
+        <meta name="description" content="Expertos en tecnología brindando soluciones digitales para empresas y hogares en Honduras." />
+      </Helmet>
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
       
       <motion.h1 
