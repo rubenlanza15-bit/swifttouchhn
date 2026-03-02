@@ -10,11 +10,11 @@ const fadeUp = {
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-40 pb-32 lg:pt-56 lg:pb-48 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
+    <section className="relative pt-32 pb-32 lg:pt-48 lg:pb-48 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col items-center text-center mt-16 lg:mt-20">
       {/* company logo - replace src/assets/logo.svg with your own image file (PNG, SVG, etc.)
           you can also update the import at the top if you change the filename
       */}
-      <img src={Logo} alt="SwiftTouch logo" className="h-16 mb-8" />
+      <img src={Logo} alt="SwiftTouchHn logo - soluciones digitales" className="h-16 mb-8" />
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
       
       <motion.h1 
@@ -39,7 +39,7 @@ export default function HeroSection() {
       <motion.a 
         href="#identidad"
         initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 0.5 }}
-        className="group flex items-center gap-2 bg-white text-[#050B14] px-8 py-4 rounded-full font-medium hover:bg-gray-200 transition-all"
+        className="group flex items-center justify-center gap-2 bg-white text-[#050B14] px-8 py-3 min-h-12 rounded-full font-medium hover:bg-gray-200 transition-all"
       >
         Conoce más
         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

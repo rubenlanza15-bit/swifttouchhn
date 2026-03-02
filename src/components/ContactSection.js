@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Instagram, Facebook } from 'lucide-react';
+import { Mail, Instagram, Facebook, Send } from 'lucide-react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,6 +15,8 @@ export default function ContactSection() {
   const [email, setEmail] = useState('');
   /* eslint-disable-next-line no-unused-vars */
   const [message, setMessage] = useState('');
+  const [subscribeEmail, setSubscribeEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
 
   /* eslint-disable-next-line no-unused-vars */
   function handleSubmit(e) {
@@ -24,6 +26,15 @@ export default function ContactSection() {
     // use correct email address
     window.location.href = `mailto:swifttouchhn@gmail.com?subject=${subject}&body=${body}`;
   }
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (subscribeEmail) {
+      setSubscribed(true);
+      setSubscribeEmail('');
+      setTimeout(() => setSubscribed(false), 3000);
+    }
+  };
 
   return (
     <section id="contacto" className="py-24 px-6 lg:px-12 max-w-4xl mx-auto text-center">
@@ -63,6 +74,30 @@ export default function ContactSection() {
           >
             <Instagram size={24} />
           </a>
+        </div>
+
+        {/* Subscription section */}
+        <div className="bg-[#0A111F] rounded-lg p-8 border border-white/5 mt-12">
+          <h3 className="text-white font-medium mb-4">Suscribete para actualizaciones</h3>
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              value={subscribeEmail}
+              onChange={(e) => setSubscribeEmail(e.target.value)}
+              placeholder="Tu correo"
+              required
+              className="flex-1 min-h-11 px-4 py-2 bg-[#050B14] border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500 transition-colors"
+              aria-label="Correo para suscripcion"
+            />
+            <button
+              type="submit"
+              className="min-h-11 px-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center justify-center gap-2"
+              aria-label="Suscribirse"
+            >
+              <Send size={18} /> Suscribir
+            </button>
+          </form>
+          {subscribed && <p className="text-green-400 text-sm mt-3">¡Gracias por suscribirse!</p>}
         </div>
 
         {/* <form onSubmit={handleSubmit} className="max-w-md mx-auto text-left flex flex-col gap-4">

@@ -9,6 +9,7 @@ import ComingSoonSection from './components/ComingSoonSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import Services from './pages/Services';
+import ComingSoonService from './pages/ComingSoonService';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
               </>
             } />
             <Route path="/services" element={<Services />} />
+            <Route path="/service/:id" element={<ComingSoonService />} />
           </Routes>
         </main>
         <Footer />

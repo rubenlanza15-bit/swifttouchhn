@@ -20,12 +20,20 @@ export default function ComingSoonSection() {
           Estamos construyendo nuevas soluciones tecnológicas que redefinirán los estándares empresariales. 
           Pronto compartiremos nuestros próximos pasos.
         </p>
-        <Link
-          to="/services"
-          className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
-        >
-          Visita nuestros servicios
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-12 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            Visita nuestros servicios
+          </Link>
+          <a
+            href="#contacto"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-12 bg-white/10 hover:bg-white/20 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            Únete a nuestra comunidad
+          </a>
+        </div>
       </motion.div>
     </section>
   );

@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { fadeUp } from '../utils/animations';
 
 // Header/cover image for the services section (add your file to src/assets)
-import coverImg from '../assets/Post ST3.png';
+import coverImg from '../assets/Post ST1.png';
 
 // // image for the "Desarrollo Web" service
 // import webImg from '../assets/full_final_postreppc.png';
@@ -22,17 +23,33 @@ export default function Services() {
     {
       title: 'Desarrollo Web',
       description: 'Estamos trabajando fuertemente para ofrecerte este servicio.',
-    //   image: webImg,
     },
     {
       title: 'Infraestructura',
       description: 'Implementación y administración de servidores y redes.',
-      // image: infraImg,
     },
     {
       title: 'Soporte Técnico',
       description: 'Asistencia 24/7 para resolver incidencias y dudas.',
-      // image: supportImg,
+    },
+  ];
+
+  const technicalServices = [
+    {
+      title: 'Reparación y Soporte de Computadoras',
+      description: 'Mantenimiento, reparación y diagnóstico de hardware y software.',
+    },
+    {
+      title: 'Reparación y Soporte de Impresoras',
+      description: 'Servicio especializado para reparación y mantenimiento de impresoras.',
+    },
+    {
+      title: 'Mantenimientos Preventivos',
+      description: 'Planes de mantenimiento regular para optimizar el rendimiento de equipos.',
+    },
+    {
+      title: 'Instalación de Software, Sistemas Operativos y Licencias',
+      description: 'Instalación profesional y configuración de software con licencias válidas.',
     },
   ];
 
@@ -67,7 +84,7 @@ export default function Services() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeUp}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
       >
         {services.map(({ title, description, image }) => (
           <div
@@ -87,6 +104,31 @@ export default function Services() {
             </p>
           </div>
         ))}
+      </motion.div>
+
+      {/* Technical Services Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        className="mt-20"
+      >
+        <h2 className="text-2xl font-semibold text-center mb-4">Servicios Técnicos</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {technicalServices.map(({ title, description }, index) => (
+            <Link
+              key={title}
+              to={`/service/${index}`}
+              className="bg-[#0A111F] p-8 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-colors cursor-pointer transform hover:scale-105 duration-300"
+            >
+              <h3 className="text-lg font-medium mb-3 text-blue-400">{title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {description}
+              </p>
+            </Link>
+          ))}
+        </div>
       </motion.div>
     </section>
   );
