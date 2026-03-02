@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,10 +16,16 @@ export default function ComingSoonSection() {
       >
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
         <h3 className="text-2xl font-semibold mb-4">El futuro está en desarrollo</h3>
-        <p className="text-gray-400 text-lg">
+        <p className="text-gray-400 text-lg mb-8">
           Estamos construyendo nuevas soluciones tecnológicas que redefinirán los estándares empresariales. 
           Pronto compartiremos nuestros próximos pasos.
         </p>
+        <Link
+          to="/services"
+          className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+        >
+          Visita nuestros servicios
+        </Link>
       </motion.div>
     </section>
   );
